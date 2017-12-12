@@ -1,0 +1,52 @@
+.fcol{
+	width:500px;
+	height:250px;
+	background-color: darkgrey;
+}
+.fcol1{
+	width: 200px;
+    height: 100px;
+    background-color: #f5dfdc;
+    margin-left: 13px;
+}
+.fcol2 {
+	width: 200px;
+    height: 100px;
+    background-color: blanchedalmond;
+    margin-left: 20px;
+}
+.fcol3 {
+	width: 100px;
+    height: 100px;
+}
+.fcol4{
+	width: 100px;
+    height: 100px;
+}
+.fcol5 {
+	width: 100px;
+    height: 100px;
+}
+
+.fcol6 {
+	width: 100px;
+    height: 100px;
+}
+.fcol7{
+	width: 500px;
+    height: 40px;
+    background-color: #8a2be28a;
+    margin-left: 13px;
+}
+
+.fcol8{
+	width: 500px;
+    height: 150px;
+    background-color: darkorchid;
+    margin-left: 13px;
+    margin-top: 10px;
+    color:#fff;
+}
+h1{
+	text-align:center;
+}
