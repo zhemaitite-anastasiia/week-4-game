@@ -11,46 +11,41 @@
 
 
 var random_result;
-var number;
-var winCount = 0;
-var loseCount = 0;
-var score;
-var previous;
+var win = 0;
+var lost = 0;
+var previous = 0;
 
 
-var reset = function() {
+var startGame = function() {
+
     $('.crystals').empty();
-    var images = ["assets/images/img1.jpg",
-        "assets/images/img2.jpg",
-        "assets/images/img3.jpg",
-        "assets/images/img4.jpg",
-    ]
+
+    random_result = Math.floor(Math.random() * 101) + 19;
+    //console.log(random_result);
+
+    $("#result").html("NUMBER: " + random_result);
+
+    for (var i = 0; i < 4; i++) {
+
+        var random = Math.floor(Math.random() * 11) + 1;
+
+
+        var crystal = $("<div>");
+        crystal.attr({
+            "class": 'crystal',
+            "data-random": random
+        });
+
+        crystal.html(random);
+
+        $(".crystals").append(crystal);
+    }
 }
 
-random_result = Math.floor(Math.random() * 101) + 19;
-//console.log(random_result);
-
-$("#result").html("NUMBER: " + random_result);
-
-for (var i = 0; i < 4; i++) {
-
-    var random = Math.floor(Math.random() * 11) + 1;
+startGame();
 
 
-    var crystal = $("<div>");
-    crystal.attr({
-        "class": 'crystal',
-        "data-random": random
-    });
-
-    crystal.html(random);
-
-    $(".crystals").append(crystal);
-}
-
-
-
-$(".crystal").on('click', function() {
+$(document).on('click',"crystal", function() {
 
     var num = parseInt($(this).attr('data-random'));
     previous += num;
@@ -58,12 +53,16 @@ $(".crystal").on('click', function() {
 
     if (previous > random_result) {
         lost--;
-        $("lost").html(lost);
+        $("#lost").html(lost);
+        previous = 0;
+        startGame();
 
 
     } else if (previous === random_result) {
         win++;
-        $("win").html(win);
+        $("#win").html(win);
+        previous = 0;
+        startGame();
 
 
     }
