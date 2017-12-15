@@ -20,10 +20,10 @@ var startGame = function() {
 
     $('.crystals').empty();
     var images = [
-    "",
-    "",
-    "",
-    ""]
+    "assets/images/img1.jpg",
+    "assets/images/img2.jpg",
+    "assets/images/img3.jpg",
+    "assets/images/img4.jpg"]
 
     random_result = Math.floor(Math.random() * 101) + 19;
     //console.log(random_result);
@@ -51,7 +51,7 @@ var startGame = function() {
         $(".crystals").append(crystal);
     }
 
- $("#previous").html("Total Score: " + previous);
+ $("#previous").html("Your total Score is: " + previous);
 }
 
 startGame();
@@ -62,12 +62,12 @@ $(document).on('click',".crystal", function() {
     var num = parseInt($(this).attr('data-random'));
     previous += num;
 
-    $("#previous").html("Total Score: " + previous);
+    $("#previous").html("Your total Score is: " + previous);
     console.log(previous);
 
     if (previous > random_result) {
         lost++;
-        $("#lost").html("You lost: " + lost);
+        $("#lost").html("Loses: " + lost);
         previous = 0;
         
         startGame();
@@ -75,7 +75,7 @@ $(document).on('click',".crystal", function() {
 
     } else if (previous === random_result) {
         win++;
-        $("#win").html("You win: " + win);
+        $("#win").html("Wins: " + win);
        
         previous = 0;
         startGame();
@@ -85,17 +85,3 @@ $(document).on('click',".crystal", function() {
 
 });
 
-
-//function startGame(){
-//Generate number for the first crystal
-
-//var random =[Math.floor(Math.random() * 12) + 1];
-
-
-
-
-//Generate the random Number
-
-
-//var number = Math.floor(Math.random() * 120) +19;
-//  then reveal number in the html
