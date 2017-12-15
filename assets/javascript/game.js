@@ -15,54 +15,72 @@ var number;
 var winCount = 0;
 var loseCount = 0;
 var score;
+var previous;
 
 
-var reset = function(){
-	$('.crystals').empty();
-	var images = ["assets/images/img1.jpg",
-	"assets/images/img2.jpg",
-	"assets/images/img3.jpg",
-	"assets/images/img4.jpg",
-	 ]
+var reset = function() {
+    $('.crystals').empty();
+    var images = ["assets/images/img1.jpg",
+        "assets/images/img2.jpg",
+        "assets/images/img3.jpg",
+        "assets/images/img4.jpg",
+    ]
 }
 
-random_result = Math.floor(Math.random() * 101) +19;
+random_result = Math.floor(Math.random() * 101) + 19;
 //console.log(random_result);
 
 $("#result").html("NUMBER: " + random_result);
 
-for (var i=0; i<4; i++){
+for (var i = 0; i < 4; i++) {
 
-	var random =Math.floor(Math.random() * 11) + 1;
-	
+    var random = Math.floor(Math.random() * 11) + 1;
 
-	var crystal = $("<div>");
-	crystal.attr({
-		"class": 'crystal', "data-random":random});
 
-	$(".crystals").append(crystal);	
+    var crystal = $("<div>");
+    crystal.attr({
+        "class": 'crystal',
+        "data-random": random
+    });
+
+    crystal.html(random);
+
+    $(".crystals").append(crystal);
 }
 
-$(".crystal").on('click', function(){
-	var result;
-	var num = $(this).attr('data-random');
-	
+
+
+$(".crystal").on('click', function() {
+
+    var num = parseInt($(this).attr('data-random'));
+    previous += num;
+    console.log(previous);
+
+    if (previous > random_result) {
+        lost--;
+        $("lost").html(lost);
+
+
+    } else if (previous === random_result) {
+        win++;
+        $("win").html(win);
+
+
+    }
+
 });
 
 
 //function startGame(){
-	//Generate number for the first crystal
-	
-		//var random =[Math.floor(Math.random() * 12) + 1];
+//Generate number for the first crystal
 
-	
-	
-
-	//Generate the random Number
-
-	
-	//var number = Math.floor(Math.random() * 120) +19;
-	   //  then reveal number in the html
-         
+//var random =[Math.floor(Math.random() * 12) + 1];
 
 
+
+
+//Generate the random Number
+
+
+//var number = Math.floor(Math.random() * 120) +19;
+//  then reveal number in the html
