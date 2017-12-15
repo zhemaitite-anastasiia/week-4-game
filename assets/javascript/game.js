@@ -1,4 +1,4 @@
-//crystals should be buttons
+
 //random number should appear on the start of the game
 //player clicks on crystal , the total score should be updated with the number
 //score counter should be all the time updqated with the score
