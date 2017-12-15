@@ -16,14 +16,38 @@ var winCount = 0;
 var loseCount = 0;
 var score;
 
-for (var i=0; i<4; i++){
-	var crystal = $("<div>");
-	crystal.attr("class", 'crystal');
-	
-	$(".crystals").append(crystal);
 
-	
+var reset = function(){
+	$('.crystals').empty();
+	var images = ["assets/images/img1.jpg",
+	"assets/images/img2.jpg",
+	"assets/images/img3.jpg",
+	"assets/images/img4.jpg",
+	 ]
 }
+
+random_result = Math.floor(Math.random() * 101) +19;
+//console.log(random_result);
+
+$("#result").html("NUMBER: " + random_result);
+
+for (var i=0; i<4; i++){
+
+	var random =Math.floor(Math.random() * 11) + 1;
+	
+
+	var crystal = $("<div>");
+	crystal.attr({
+		"class": 'crystal', "data-random":random});
+
+	$(".crystals").append(crystal);	
+}
+
+$(".crystal").on('click', function(){
+	var result;
+	var num = $(this).attr('data-random');
+	
+});
 
 
 //function startGame(){
