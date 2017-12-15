@@ -10,39 +10,35 @@
 //crystal random number between 1-12
 
 
+var random_result;
 var number;
 var winCount = 0;
 var loseCount = 0;
 var score;
 
-function startGame(){
+for (var i=0; i<4; i++){
+	var crystal = $("<div>");
+	crystal.attr("class", 'crystal');
+	
+	$(".crystals").append(crystal);
+
+	
+}
+
+
+//function startGame(){
 	//Generate number for the first crystal
-	$(".fcol3").on("click", function(){
-		var random =[Math.floor(Math.random() * 12) + 1];
+	
+		//var random =[Math.floor(Math.random() * 12) + 1];
 
-	})
-	//Generate number for the second crystal
-	$(".fcol4").on("click", function(){
-		var random =[Math.floor(Math.random() * 12) + 1];
-
-	})
-	//Generate number for the third crystal
-	$(".fcol5").on("click", function(){
-		var random =[Math.floor(Math.random() * 12) + 1];
-
-	})
-	//Generate number for the fourth crystal
-	$(".fcol6").on("click", function(){
-
-		var random =[Math.floor(Math.random() * 12) + 1];
-
-	})
+	
+	
 
 	//Generate the random Number
 
-	var number = ".fcol1"
-	var number = Math.floor(Math.random() * 120) +19;
 	
+	//var number = Math.floor(Math.random() * 120) +19;
+	   //  then reveal number in the html
+         
 
 
-}
